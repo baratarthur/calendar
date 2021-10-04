@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  name: 'prod',
+  production: true,
+  api: {
+    baseUrl: "https://timelyapp.time.ly/api"
+  }
 };

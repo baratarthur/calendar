@@ -1,0 +1,93 @@
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .calendar-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .help-container {
+                position: relative;
+                cursor: pointer;
+                margin: 1rem;
+
+                .info-hover {
+                    padding: 0.5rem;
+                    box-shadow: 0rem 0rem 2rem lightgray;
+                }
+
+                .help-info {
+                    padding: 1rem;
+                    margin: 0;
+                    max-width: 12rem;
+                    border-radius: 0.25rem;
+                    background-color: #616161;
+                    color: white;
+                    font-weight: bold;
+                    position: fixed;
+                    display: none;
+                }
+
+                &:hover {
+                    .help-info {
+                        display: block;
+                    }
+                }
+            }
+
+            a:hover {
+                color: deepskyblue;
+            }
+        }
+    }
+
+    .buttons {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .years {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+    
+            h1 {
+                margin: 1rem;
+            }
+        }
+
+        button {
+            padding: 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: larger;
+            background-color: transparent;
+            border: none;
+            border-radius: 0.5rem;
+
+            &:hover {
+                box-shadow: 0 0 2rem lightgray;
+            }
+        }
+    }
+
+    .calendar-grid {
+        list-style-type: none;
+        margin: 0;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        overflow-y: auto;
+    }
+}

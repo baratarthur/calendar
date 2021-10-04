@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  name: 'dev',
+  production: false,
+  api: {
+    baseUrl: "https://timelyapp.time.ly/api"
+  }
 };
 
 /*

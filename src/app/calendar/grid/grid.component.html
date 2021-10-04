@@ -1,0 +1,31 @@
+<div class="calendar-container">
+    <div class="calendar-info">
+        <h1>{{(calendar | async)?.data?.title}}</h1>
+        <span>
+            <div class="help-container">
+                <span class="info-hover">!</span>
+                <p class="help-info">
+                    Click on the cards to mark them and follow them as you scroll the page
+                </p>
+            </div>
+            <a [href]="(calendar | async)?.data?.calendar_url" target="new_blank">See on Time.ly</a>
+        </span>
+    </div>
+    <div class="buttons">
+        <button (click)="onGetPreviousWeek()"><</button>
+        <div class="years">
+            <h1 *ngFor="let year of years">{{year}}</h1>
+            <input type="date" [formControl]="pickDate">
+        </div>
+        <button (click)="onGetNextWeek()">></button>
+    </div>
+    <ul class="calendar-grid">
+        <ng-container *ngFor="let day of week">
+            <app-event-list
+                [day]="day"
+                [events]="events"
+                [selected]="isCurrentDay(day)? true: false"
+            ></app-event-list>
+        </ng-container>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+li {
+    height: fit-content;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 0 1rem lightgray;
+    margin: 0 0.5rem;
+    min-width: 13rem;
+    cursor: pointer;
+
+    &.selected {
+        background-color: lightyellow;
+    }
+
+    h1, h2, h3 {
+        margin: 0;
+        padding: 0.5rem;
+    }
+}

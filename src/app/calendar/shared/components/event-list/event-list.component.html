@@ -1,0 +1,14 @@
+<li (click)="onToggleSelected()" [class]="selected? 'selected': ''">
+    <h1>{{getMonthString(day.getMonth())}}</h1>
+    <h2>{{getDayString(day.getDay())}}</h2>
+    <h3>{{day.getDate()}}</h3>
+    <ng-container *ngIf="events">
+        <h3>Number of events: {{getNumberOfEvents(day)}}</h3>
+        <ng-container *ngFor="let event of events">
+                <app-event-card
+                    [data]="event"
+                    *ngIf="is(event, day)"
+                ></app-event-card>
+        </ng-container>
+    </ng-container>
+</li>
