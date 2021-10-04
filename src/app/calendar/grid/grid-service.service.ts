@@ -14,9 +14,7 @@ export class GridServiceService {
 
   getCalendar(): Observable<CalendarResponse> {
     const url = `${environment.api.baseUrl}/${apiREsources.getCalendar}`;
-    const body = {
-      url: "https://calendar.time.ly/6a37fb6n"
-    };
+    const body = {};
 
     return this._http.post<CalendarResponse>(url, body);
   }
